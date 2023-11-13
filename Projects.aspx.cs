@@ -12,6 +12,7 @@ namespace CitizenScience
 {
     public partial class Projects : System.Web.UI.Page
     {
+        //method that references stored procedure that requires the researchID 
         public DataTable GetProjects()
         { 
         
@@ -41,6 +42,8 @@ namespace CitizenScience
             }
             return dt;
         }
+
+        //if parameter is not provided, page is redirected to the ResearchAreas, if it is provided, loads the appropriate project(s) for given research area
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
