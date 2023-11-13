@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ResearchAreas.aspx.cs" Inherits="CitizenScience.ResearchAreas" %>
 
+<%-- provides link to Projects page based on given ResearchID for the ResearchArea--%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <asp:Repeater ID="Projects" runat="server">
