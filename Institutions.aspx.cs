@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace CitizenScience
 {
+    //method that uses stored procedure to get the Institutions
     public partial class Institutions : System.Web.UI.Page
     {
         public DataTable GetInstitutions()
@@ -30,6 +31,8 @@ namespace CitizenScience
             return dt;
 
         }
+
+        //calls the method to load onto the page
             protected void Page_Load(object sender, EventArgs e)
             {
                 Institution.DataSource = GetInstitutions();
@@ -39,3 +42,5 @@ namespace CitizenScience
     }
     
 }
+
+    
