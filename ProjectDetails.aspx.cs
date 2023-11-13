@@ -12,6 +12,7 @@ namespace CitizenScience
 {
     public partial class ProjectDetails : System.Web.UI.Page
     {
+    //method that displays the appropriate projects based on given ProjectID parameter
         public void DisplayProjectDetails(string ProjectID)
         {
             
@@ -41,6 +42,7 @@ namespace CitizenScience
             }
 
         }
+         //calls the above method to display it on the page when a projectID is given
 
         protected void Page_Load(object sender, EventArgs e)
         {
