@@ -12,7 +12,7 @@ namespace CitizenScience
 {
     public partial class ResearchAreas : System.Web.UI.Page
     {
-    //method that uses the InstitutionID as a parameter to get the research areas by the passed in InstitutionID
+        //method that uses the InstitutionID as a parameter to get the research areas by the passed in InstitutionID
         public DataTable GetResearchAreasByInstitution()
         {
             DataTable dt = new DataTable();
@@ -44,7 +44,7 @@ namespace CitizenScience
             return dt;
         }
 
-//method that uses a different stored procedure that displays all research areas, used if there is no InstitutionID provided
+        //method that uses a different stored procedure that displays all research areas, used if there is no InstitutionID provided
         public DataTable GetAllResearchAreas()
         {
             DataTable dt = new DataTable();
@@ -63,7 +63,7 @@ namespace CitizenScience
             return dt;
         }
 
-//loads page and calls appropriate method based on parameters (if provided)
+        //loads page and calls appropriate method based on parameters (if provided)
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)

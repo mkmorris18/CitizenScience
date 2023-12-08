@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ProjectDetails.aspx.cs" Inherits="CitizenScience.ProjectDetails" %>
 
-<%--shows the project's details with visual clarity --%>
+<%--shows the projects details with visual clarity --%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <table>
@@ -25,6 +25,9 @@
                     <div>
                         <label>Description:</label>
                        <p><asp:Label ID="lblDescription" runat="server" Text="Description"></asp:Label></p>
+                    </div>
+                    <div>
+                        <asp:Button ID="btnReports" runat="server" Text="View Reports" OnClick="btnReports_OnClick" Visible='<%# HttpContext.Current.User.Identity.IsAuthenticated %>'/>
                     </div>
                 </td>
             </tr>

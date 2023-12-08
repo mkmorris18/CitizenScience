@@ -12,7 +12,7 @@ namespace CitizenScience
 {
     public partial class ProjectDetails : System.Web.UI.Page
     {
-    //method that displays the appropriate projects based on given ProjectID parameter
+        //method that displays the appropriate projects based on given ProjectID parameter
         public void DisplayProjectDetails(string ProjectID)
         {
             
@@ -42,8 +42,7 @@ namespace CitizenScience
             }
 
         }
-         //calls the above method to display it on the page when a projectID is given
-
+        //calls the above method to display it on the page when a projectID is given
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -58,5 +57,18 @@ namespace CitizenScience
             
 
         }
+        //creating report button
+        protected void btnReports_OnClick(object sender, EventArgs e)
+        {
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Redirect("Reports.aspx?ReportID=" + Request.QueryString["ReportID"]);
+            }
+        }
     }
 }
+    

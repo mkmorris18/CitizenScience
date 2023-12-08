@@ -7,65 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CitizenScience
+namespace WebFormsIdentity
 {
 
 
-    public partial class ProjectDetails
+    public partial class Login
     {
 
         /// <summary>
-        /// lblProjectName control.
+        /// LoginStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProjectName;
+        protected global::System.Web.UI.WebControls.PlaceHolder LoginStatus;
 
         /// <summary>
-        /// lblStartDate control.
+        /// StatusText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStartDate;
+        protected global::System.Web.UI.WebControls.Literal StatusText;
 
         /// <summary>
-        /// lblEndDate control.
+        /// LoginForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEndDate;
+        protected global::System.Web.UI.WebControls.PlaceHolder LoginForm;
 
         /// <summary>
-        /// lblCoordinator control.
+        /// UserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCoordinator;
+        protected global::System.Web.UI.WebControls.TextBox UserName;
 
         /// <summary>
-        /// lblDescription control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
-        /// btnReports control.
+        /// LogoutButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReports;
+        protected global::System.Web.UI.WebControls.PlaceHolder LogoutButton;
     }
 }

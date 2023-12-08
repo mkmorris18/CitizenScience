@@ -11,61 +11,79 @@ namespace CitizenScience
 {
 
 
-    public partial class ProjectDetails
+    public partial class Observations
     {
 
         /// <summary>
-        /// lblProjectName control.
+        /// errorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProjectName;
+        protected global::System.Web.UI.WebControls.Panel errorMsg;
 
         /// <summary>
-        /// lblStartDate control.
+        /// ObservationID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStartDate;
+        protected global::System.Web.UI.WebControls.Panel ObservationID;
 
         /// <summary>
-        /// lblEndDate control.
+        /// NotesBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEndDate;
+        protected global::System.Web.UI.WebControls.TextBox NotesBox;
 
         /// <summary>
-        /// lblCoordinator control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCoordinator;
+        protected global::System.Web.UI.WebControls.Button Submit;
 
         /// <summary>
-        /// lblDescription control.
+        /// Success control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.Panel Success;
 
         /// <summary>
-        /// btnReports control.
+        /// ObNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReports;
+        protected global::System.Web.UI.WebControls.Label ObNumber;
+
+        /// <summary>
+        /// CreateObs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel CreateObs;
+
+        /// <summary>
+        /// LoginView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView LoginView1;
     }
 }

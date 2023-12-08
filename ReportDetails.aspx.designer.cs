@@ -11,25 +11,34 @@ namespace CitizenScience
 {
 
 
-    public partial class SiteMaster
+    public partial class ReportDetails
     {
 
         /// <summary>
-        /// LoginView1 control.
+        /// errorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.WebControls.Panel errorMsg;
 
         /// <summary>
-        /// MainContent control.
+        /// ObservationPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Panel ObservationPanel;
+
+        /// <summary>
+        /// ObservationTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater ObservationTable;
     }
 }
