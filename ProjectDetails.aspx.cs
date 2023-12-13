@@ -12,53 +12,61 @@ namespace CitizenScience
 {
     public partial class ProjectDetails : System.Web.UI.Page
     {
-        //method that displays the appropriate projects based on given ProjectID parameter
-        public void DisplayProjectDetails(string ProjectID)
+        public DataTable GetDataTable()
         {
-            
-            string connStr = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
+            DataTable dt = new DataTable();
+            string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ConnectionString;
+            string query;
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            // Executing the spProjectDetails sp and if the query string parameter named ProjectID is given it will execute the sp with that parameter
+            if (Request.QueryString["ProjectID"] != null)
             {
-                string query = "EXEC sp_GetProjectDetails @ProjectID";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ProjectID", ProjectID);
-
-                conn.Open();
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                 if (reader.Read())
-                 {
-                            lblProjectName.Text = reader["ProjectName"].ToString();
-                            lblStartDate.Text = reader["StartDate"].ToString();
-                            lblEndDate.Text = reader["EndDate"].ToString();
-                            lblCoordinator.Text = reader["Coordinator"].ToString();
-                            lblDescription.Text = reader["Description"].ToString();
-                  }
-                      
-                reader.Close();    
-                
+                query = "EXEC sp_GetProjectDetails @ProjectID";
+            }
+            else
+            {
+                query = "EXEC sp_GetProjectDetails";
             }
 
+
+            // Creating an Sqlconnection object. If a query string parameter named InstID is given this will add it as a parameter to the SqlCommand
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    if (Request.QueryString["ProjectID"] != null)
+                    {
+                        command.Parameters.AddWithValue("@ProjectID", Request.QueryString["ProjectID"]);
+                    }
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(command))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
         }
-        //calls the above method to display it on the page when a projectID is given
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (Request.QueryString["ProjectID"] == null)
             {
-                string projectID = Request.QueryString["ProjectID"];
-                if(!string.IsNullOrEmpty(projectID) ) 
-                {
-                    DisplayProjectDetails(projectID);
-                }
-
+                Response.Redirect("Institutions.aspx");
             }
-            
-
+           
+            {
+                if (!IsPostBack)
+                {
+                    ProjectDetailsRepeater.DataSource = GetDataTable();
+                    ProjectDetailsRepeater.DataBind();
+                }
+            }
         }
-        //creating report button
-        protected void btnReports_OnClick(object sender, EventArgs e)
+
+        protected void btnCreateReport_Click(object sender, EventArgs e)
         {
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
             {
@@ -66,9 +74,8 @@ namespace CitizenScience
             }
             else
             {
-                Response.Redirect("Reports.aspx?ReportID=" + Request.QueryString["ReportID"]);
+                Response.Redirect("ReportDetails.aspx?ProjectID=" + Request.QueryString["ProjectID"]);
             }
         }
     }
 }
-    

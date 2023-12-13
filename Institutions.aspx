@@ -4,6 +4,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
+        <h1 style="font-size: larger">Institutions</h1>
         <asp:Repeater ID="Institution" runat="server">
             <ItemTemplate>
                 <a href="ResearchAreas.aspx?InstID<%# Eval("InstitutionID") %>">

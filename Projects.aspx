@@ -3,8 +3,10 @@
 <%--provides links to project details page based on given ProjectID --%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
+        <h1 style="font-size: larger">Projects</h1>
         <asp:Repeater ID="Project" runat="server">
             <ItemTemplate>
+                
                 <a href="ProjectDetails.aspx?ProjectID=<%# Eval("ProjectID") %>">
                     <%# Eval("ProjectName") %>
                 </a>

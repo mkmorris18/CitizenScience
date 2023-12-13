@@ -48,11 +48,13 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Institutions">Institutions</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ResearchAreas">ResearchAreas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ResearchAreas">Research Areas</a></li>
                         <asp:LoginView runat="server" ID="LoginView1">
                             <LoggedInTemplate>
+                                <li class="nav-item"><a class="nav-link" runat="server" href="~/Reports">Reports</a></li>
                                 <li class="nav-item"><a class="nav-link" runat="server" href="~/Logout">Logout</a></li>
                             </LoggedInTemplate>
+                            
                             <AnonymousTemplate>
                                 <li class="nav-item"><a class="nav-link" runat="server" href="~/login">Login</a></li>
                             </AnonymousTemplate>

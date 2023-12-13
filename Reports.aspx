@@ -5,6 +5,7 @@
         <asp:Panel ID="ReportsPanel" runat="server" Visible="false">
           <asp:Repeater ID="ReportsTable" runat="server">
             <ItemTemplate>
+                <h4 style="font-size: medium">Reports</h4>
                 <div class="report">
                    <p><%# Eval("ProjectName") %></p>
                    <p><a href="ReportDetails.aspx?ID=<%# Eval("ReportID") %>">View Report><%# Eval("ReportID") %></a></p>

@@ -13,6 +13,22 @@ namespace CitizenScience
 {
     public partial class ReportDetails : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string ReportID = Request.QueryString["ID"];
+            if (ReportID != null)
+            {
+                Session["ReportID"] = ReportID;
+            }
+            else
+            {
+                CreateReport();
+            }
+
+            DisplayObservations();
+
+
+        }
         //displays the current observations for the given report- checks report with parameters, redirects to login page if invalid
         public void DisplayObservations()
         {
@@ -21,7 +37,7 @@ namespace CitizenScience
                 DataTable dt = new DataTable();
                 string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
                 string ReportID = Session["ReportID"] as string;
-                string query = "select * from Observations where reportID=@ReportID";
+                string query = "select * from Observations where ReportID=@ReportID";
 
                 using (SqlConnection conn = new SqlConnection())
                 {
@@ -33,7 +49,7 @@ namespace CitizenScience
                         cmd.Parameters.AddWithValue("@ReportID", ReportID);
                         cmd.ExecuteNonQuery();
 
-                        using(SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {
                             da.Fill(dt);
                         }
@@ -45,16 +61,12 @@ namespace CitizenScience
                 ObservationTable.DataSource = dt;
                 ObservationTable.DataBind();
                 ObservationPanel.Visible = true;
-
-
             }
 
             else
             {
                 Response.Redirect("Login.aspx");
             }
-  
-
         }
 
         //method to create a report if user chooses, passes in project id/user id parameters
@@ -99,22 +111,7 @@ namespace CitizenScience
 
         }
 
-        //loads page 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            string ReportID = Request.QueryString["ID"];
-            if(ReportID != null)
-            {
-                Session["ReportID"] = ReportID;
-            }
-            else
-            {
-                CreateReport();
-            }
-
-            DisplayObservations();
-
-
-        }
+        
+        
     }
 }
