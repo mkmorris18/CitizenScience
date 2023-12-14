@@ -24,13 +24,13 @@ namespace CitizenScience
         protected global::System.Web.UI.WebControls.Panel errorMsg;
 
         /// <summary>
-        /// ObservationID control.
+        /// ObservationSubID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ObservationID;
+        protected global::System.Web.UI.WebControls.Panel ObservationSubID;
 
         /// <summary>
         /// NotesBox control.
@@ -49,24 +49,6 @@ namespace CitizenScience
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Submit;
-
-        /// <summary>
-        /// Success control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Success;
-
-        /// <summary>
-        /// ObNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ObNumber;
 
         /// <summary>
         /// CreateObs control.

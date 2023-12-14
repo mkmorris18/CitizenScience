@@ -18,7 +18,7 @@ namespace CitizenScience
         {
             if(User.Identity.IsAuthenticated)
             {
-                ObservationID.Visible = true;
+                ObservationSubID.Visible = true;
             }
             else
             {
@@ -49,7 +49,7 @@ namespace CitizenScience
                         cmd.Parameters.Add("@ReportID", SqlDbType.Int);
 
 
-                        cmd.Parameters["ReportID"].Direction = ParameterDirection.Output;
+                        cmd.Parameters["@ReportID"].Direction = ParameterDirection.Output;
 
 
                         cmd.ExecuteNonQuery();
@@ -59,7 +59,7 @@ namespace CitizenScience
                     }
                 }
 
-                ObservationID.Visible = true;
+                ObservationSubID.Visible = true;
             }
             else
             {
@@ -92,13 +92,9 @@ namespace CitizenScience
 
                     cmd.ExecuteNonQuery ();
 
-                    ObservationID.Visible = true;
+                    ObservationSubID.Visible = true;
 
-                    if (cmd.Parameters["@ObservationID"].Value != DBNull.Value)
-                    {
-                        Success.Visible = true;
-                        ObNumber.Text = cmd.Parameters["@ObservationID"].Value.ToString();
-                    }
+                   
 
                 }
 
@@ -111,7 +107,7 @@ namespace CitizenScience
             if (Page.IsValid)
             {
                 InsertObservation();
-                ObservationID.Visible = false;
+                ObservationSubID.Visible = false;
 
                 Response.Redirect("ReportDetails.aspx?ID=" + Session["ReportID"]);
             }
@@ -123,7 +119,7 @@ namespace CitizenScience
             string ReportID = Session["ReportID"] as string;
             if(ReportID != null )
             {
-                ObservationID.Visible = true;
+                ObservationSubID.Visible = true;
             }
             else
             {

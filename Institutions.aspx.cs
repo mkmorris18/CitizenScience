@@ -33,12 +33,25 @@ namespace CitizenScience
         }
 
         //calls the method to load onto the page
-            protected void Page_Load(object sender, EventArgs e)
-            {
+        protected void Page_Load(object sender, EventArgs e)
+        {
                 Institution.DataSource = GetInstitutions();
                 Institution.DataBind();
+        }
+
+
+        protected void btnInstInfo_Click(object sender, EventArgs e)
+        {
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Login.aspx");
             }
-        
+            else
+            {
+                Response.Redirect("InstitutionsInfo.aspx");
+            }
+        }
+
     }
     
 }

@@ -60,6 +60,15 @@ namespace WebFormsIdentity
         protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
+        /// btnHomePage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHomePage;
+
+        /// <summary>
         /// LogoutButton control.
         /// </summary>
         /// <remarks>

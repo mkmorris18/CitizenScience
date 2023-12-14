@@ -151,7 +151,9 @@
     <Content Include="Content\bootstrap-utilities.min.css" />
     <Content Include="Content\bootstrap-utilities.rtl.css" />
     <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap-old.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min-old.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
@@ -160,6 +162,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Institutions.aspx" />
+    <Content Include="InstitutionsInfo.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Observations.aspx" />
@@ -263,6 +266,13 @@
     </Compile>
     <Compile Include="Institutions.aspx.designer.cs">
       <DependentUpon>Institutions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstitutionsInfo.aspx.cs">
+      <DependentUpon>InstitutionsInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstitutionsInfo.aspx.designer.cs">
+      <DependentUpon>InstitutionsInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

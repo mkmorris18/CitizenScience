@@ -75,7 +75,7 @@ namespace CitizenScience
             string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
 
             string userID = HttpContext.Current.User.Identity.GetUserId();
-            string ProjectID = Session["ProjectID"] as string;
+            string ProjectID = Request.QueryString["ProjectID"] as string;
 
             if(ProjectID != null & userID != null)
             {
@@ -89,9 +89,9 @@ namespace CitizenScience
                         cmd.Parameters.AddWithValue("@ProjectID", ProjectID);
                         cmd.Parameters.AddWithValue("@VolunteerID", userID);
                         cmd.Parameters.Add("@ReportID", SqlDbType.Int);
+                        
 
-
-                        cmd.Parameters["ReportID"].Direction = ParameterDirection.Output;
+                        cmd.Parameters["@ReportID"].Direction = ParameterDirection.Output;
 
 
                         cmd.ExecuteNonQuery();
@@ -108,7 +108,7 @@ namespace CitizenScience
             }
 
 
-
+            
         }
 
         
